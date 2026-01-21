@@ -1,7 +1,7 @@
 services:
   db:
     image: mysql:8.4
-    container_name: app-db
+    container_name: study-db
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
@@ -12,6 +12,8 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+      # 初期SQLを使いたいなら下をON（任意）
+      # - ./study-db/mysql/init:/docker-entrypoint-initdb.d
 
 volumes:
   db_data:

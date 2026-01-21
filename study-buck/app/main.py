@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from app.api import game
 
 app = FastAPI()
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app.include_router(game.router)
