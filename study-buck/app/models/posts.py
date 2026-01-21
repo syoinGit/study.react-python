@@ -3,8 +3,7 @@ from sqlalchemy import String, ForeignKey, DateTime
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from datetime import datetime, timezone
 
-class Base(DeclarativeBase):
-    pass 
+from app.models.base import Base
 
 class Post (Base):
     __tablename__ = "posts"
